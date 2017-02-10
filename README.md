@@ -12,8 +12,11 @@ node app.js
 ## TODO
 
 - Create the folder routes
-- Get the file url once you upload an image
-- Get a public url of the image that users can see at a later date
+- Get a public url of the image that users can see at a later date?
+- Generate Docs properly
+- Docker
+- Jenkins run tests and deploy
+- Host this on dev1
 
 ## Questions
 
@@ -24,3 +27,4 @@ node app.js
 - <http://stackoverflow.com/questions/7511321/uploading-base64-encoded-image-to-amazon-s3-via-node-js>
 - <https://aws.amazon.com/sdk-for-node-js/>
 - <http://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/getting-started-nodejs.html#getting-started-nodejs-install-sdk>
+- <http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html>

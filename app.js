@@ -27,10 +27,9 @@
 process.chdir(__dirname);
 
 
-
 // Attempt to import `sails` dependency, as well as `rc` (for loading `.sailsrc` files).
-var sails;
-var rc;
+let sails;
+let rc;
 try {
   sails = require('sails');
   rc = require('sails/accessible/rc');
@@ -45,7 +44,7 @@ try {
   console.error('When you run `sails lift`, your app will still use a local `./node_modules/sails` dependency if it exists,');
   console.error('but if it doesn\'t, the app will run with the global sails instead!');
   return;
-}//-•
+}
 
 
 // Start server

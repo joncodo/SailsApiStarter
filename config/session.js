@@ -11,13 +11,13 @@
 
 module.exports.session = {
 
-  /***************************************************************************
-  *                                                                          *
-  * Session secret is automatically generated when your new app is created   *
-  * Replace at your own risk in production-- you will invalidate the cookies *
-  * of your users, forcing them to log in again.                             *
-  *                                                                          *
-  ***************************************************************************/
-  secret: '660a4d3a10bb90434858bb9bbf40e99f',
+  /** *************************************************************************
+   *                                                                          *
+   * Session secret is automatically generated when your new app is created   *
+   * Replace at your own risk in production-- you will invalidate the cookies *
+   * of your users, forcing them to log in again.                             *
+   *                                                                          *
+   ***************************************************************************/
+  secret: '660a4d3a10bb90434858bb9bbf40e99f'
 
 };

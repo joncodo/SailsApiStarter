@@ -6,6 +6,9 @@ before(function(done) {
   this.timeout(60000);
 
   sails.lift({
+    hooks: {
+      grunt: false
+    }
     // configuration for testing purposes
   }, function(err) {
     if (err) return done(err);

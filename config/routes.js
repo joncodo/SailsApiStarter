@@ -24,6 +24,7 @@ module.exports.routes = {
     view: 'homepage'
   },
 
-  '/file/create': 'FileController.upload',
-  '/file/delete': 'FileController.delete'
+  'POST /file/create': 'FileController.create',
+  'GET /file/read/:folder/:fileName': 'FileController.read',
+  'DELETE /file/delete': 'FileController.delete'
 };

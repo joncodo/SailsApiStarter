@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "NODE_ENV=production node app.js",
-    "test": "./node_modules/mocha/bin/mocha mocha.before.js api/**/*.test.js --timeout 10000",
+    "test": "./node_modules/mocha/bin/mocha test/mocha.before.js test/**/*.test.js --timeout 10000",
     "debug": "node debug app.js"
   },
   "main": "app.js",
@@ -28,6 +28,7 @@
   "license": "",
   "devDependencies": {
     "chai": "^3.5.0",
+    "jsdoc": "^3.4.3",
     "mocha": "^3.2.0",
     "supertest": "^3.0.0"
   }

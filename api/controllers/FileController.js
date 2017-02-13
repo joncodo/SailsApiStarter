@@ -9,30 +9,28 @@ const AWS = require('aws-sdk');
 AWS.config.loadFromPath('./s3-config.json');
 
 const s3 = new AWS.S3({
-  endpoint: 's3-eu-central-1.amazonaws.com',
+  endpoint: 's3.amazonaws.com',
   signatureVersion: 'v4'
 });
 
 module.exports = {
-  // TODO create multiple files at once
-
   /**
    * FileController.create()
-   * /file/create
+   * POST /file/:folder/:fileName
    * @description :: Removes a file from the s3 bucket (folder) that you choose
-   * @param {string} folder the s3 bucket(folder) form which you wish to delete
-   * @param {string} fileName the name of the file you wish to delete
+   * @param {string} folder the s3 bucket(folder) you will use to create
+   * @param {string} fileName the name of the file you wish to create
    */
   create: function(req, res) {
     req.file('image')._files.forEach(function(file) {
       const buffer = file.stream._readableState.buffer[0];
-      const fileName = file.stream.filename;
+      const fileName = req.params.fileName || file.stream.filename;
       const byteOffset = file.stream.byteOffset;
       const byteCount = file.stream.byteCount;
       const contentType = file.stream.headers['content-type'];
 
       const data = {
-        Bucket: 'teamone-files',
+        Bucket: req.params.folder || 'teamone-files',
         Key: fileName,
         Body: buffer,
         ContentType: contentType
@@ -95,8 +93,8 @@ module.exports = {
    */
   delete: function(req, res) {
     const data = {
-      Bucket: req.body.folder,
-      Key: req.body.fileName
+      Bucket: req.params.folder,
+      Key: req.params.fileName
     };
 
     console.log('deleting file form s3: ', data);

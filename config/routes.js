@@ -24,7 +24,13 @@ module.exports.routes = {
     view: 'homepage'
   },
 
-  'POST /file/create': 'FileController.create',
-  'GET /file/read/:folder/:fileName': 'FileController.read',
-  'DELETE /file/delete': 'FileController.delete'
+  // Files
+  'POST /v1/file/:folder/:fileName': 'FileController.create',
+  'GET /v1/file/:folder/:fileName': 'FileController.read',
+  'DELETE /v1/file/:folder/:fileName': 'FileController.delete',
+
+  // Folders
+  'POST /v1/folder/:folderName': 'FolderController.create',
+  'GET /v1/folders': 'FolderController.list',
+  'DELETE /v1/folder/:folderName': 'FolderController.delete'
 };

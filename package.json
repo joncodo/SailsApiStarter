@@ -15,7 +15,7 @@
   "scripts": {
     "start": "NODE_ENV=production node app.js",
     "test": "./node_modules/mocha/bin/mocha test/mocha.before.js test/**/*.test.js --timeout 10000",
-    "docs": "./node_modules/.bin/jsdoc *.js -d docs",
+    "docs": "./node_modules/.bin/jsdoc api/**/*.js README.md -d docs && open docs/index.html",
     "production": "NODE_ENV=production forever start app.js",
     "debug": "node debug app.js"
   },

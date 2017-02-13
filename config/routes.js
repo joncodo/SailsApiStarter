@@ -24,6 +24,11 @@ module.exports.routes = {
     view: 'homepage'
   },
 
+  '/docs': function(req, res, next) {
+    console.log(sails.config.appPath);
+    res.sendFile(sails.config.appPath + '/docs/index.html');
+  },
+
   // Files
   'POST /v1/file/:folder/:fileName': 'FileController.create',
   'GET /v1/file/:folder/:fileName': 'FileController.read',

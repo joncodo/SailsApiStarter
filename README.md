@@ -11,7 +11,6 @@ node app.js
 
 ## TODO
 
-- Create the folder routes
 - Get a public url of the image that users can see at a later date?
 - Generate Docs properly
 - Docker

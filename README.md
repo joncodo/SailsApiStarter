@@ -1,4 +1,4 @@
-# Team One Amazon S3 Proxy Server
+# Amazon S3 Proxy Server
 
 a [Sails](http://sailsjs.com) application
 

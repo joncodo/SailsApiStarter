@@ -4,7 +4,7 @@ describe('FileController', function() {
   describe('#create()', function() {
     it('should create a file', function(done) {
       request(sails.hooks.http.app)
-        .post('/v1/file/teamone-files/small.png')
+        .post('/v1/file/tester/small.png')
         .field('title', 'test')
         .attach('image', 'test/assets/small.png')
         .expect(200, done);
@@ -14,7 +14,7 @@ describe('FileController', function() {
   describe('#read()', function() {
     it('should get file details', function(done) {
       request(sails.hooks.http.app)
-        .get('/v1/file/teamone-files/small.png')
+        .get('/v1/file/tester/small.png')
         .expect(200, done);
     });
   });
@@ -22,10 +22,10 @@ describe('FileController', function() {
   describe('#delete()', function() {
     it('should remove a file from folder', function(done) {
       request(sails.hooks.http.app)
-        .delete('/v1/file/teamone-files/small.png')
+        .delete('/v1/file/tester/small.png')
         .send({
           fileName: 'small.png',
-          folder: 'teamone-files'
+          folder: 'tester'
         })
         .expect(200, done);
     });

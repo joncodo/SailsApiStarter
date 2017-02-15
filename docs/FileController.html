@@ -97,7 +97,7 @@ AWS.config.loadFromPath(<span class="hljs-string">'./s3-config.json'</span>);
       <span class="hljs-keyword">const</span> contentType = file.stream.headers[<span class="hljs-string">'content-type'</span>];
 
       <span class="hljs-keyword">const</span> data = {
-        <span class="hljs-attr">Bucket</span>: req.params.folder || <span class="hljs-string">'teamone-files'</span>,
+        <span class="hljs-attr">Bucket</span>: req.params.folder,
         <span class="hljs-attr">Key</span>: fileName,
         <span class="hljs-attr">Body</span>: buffer,
         <span class="hljs-attr">ContentType</span>: contentType
@@ -111,7 +111,7 @@ AWS.config.loadFromPath(<span class="hljs-string">'./s3-config.json'</span>);
           <span class="hljs-keyword">return</span> res.status(<span class="hljs-number">500</span>).send(error);
         } <span class="hljs-keyword">else</span> {
           <span class="hljs-built_in">console</span>.log(response);
-          <span class="hljs-keyword">return</span> res.status(<span class="hljs-number">200</span>).send(<span class="hljs-string">'Successfully uploaded data to: teamone - files'</span> + fileName);
+          <span class="hljs-keyword">return</span> res.status(<span class="hljs-number">200</span>).send(<span class="hljs-string">'Successfully uploaded data to:'</span> + fileName);
         }
       });
     });

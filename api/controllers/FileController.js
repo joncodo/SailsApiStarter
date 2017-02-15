@@ -23,7 +23,7 @@ module.exports = {
       const contentType = file.stream.headers['content-type'];
 
       const data = {
-        Bucket: req.params.folder || 'teamone-files',
+        Bucket: req.params.folder,
         Key: fileName,
         Body: buffer,
         ContentType: contentType
@@ -37,7 +37,7 @@ module.exports = {
           return res.status(500).send(error);
         } else {
           console.log(response);
-          return res.status(200).send('Successfully uploaded data to: teamone - files' + fileName);
+          return res.status(200).send('Successfully uploaded data to:' + fileName);
         }
       });
     });

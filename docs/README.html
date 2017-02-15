@@ -58,11 +58,10 @@
 <p>a <a href="http://sailsjs.com">Sails</a> application</p>
 <p><strong>You will need to edit the file s3-config.json.example to be s3-config.json and then change the contents of that file to have the correct keys. You can find these keys in the AWS management console under your username &gt; Your security credentials &gt; Access Keys &gt; Create new access key - <a href="https://console.aws.amazon.com/iam/home?region=us-east-1#/security_credential">here</a></strong></p>
 <pre><code>npm install
-node app.js
+npm start
 </code></pre><h2 id="todo">TODO</h2>
 <ul>
 <li>Get a public url of the image that users can see at a later date?</li>
-<li>Generate Docs properly</li>
 <li>Docker</li>
 <li>Jenkins run tests and deploy</li>
 <li>Host this on dev1</li>
@@ -71,7 +70,13 @@ node app.js
 <ul>
 <li>How long do we make the resources public?</li>
 </ul>
-<h2 id="reference-code">Reference Code</h2>
+<h2 id="commands">Commands</h2>
+<pre><code>npm start // start the app
+npm test // Run unit tests
+npm run docs // Generate and view the docs
+npm run production // prod mode
+npm debug //Listens for process on default debug port
+</code></pre><h2 id="reference-code">Reference Code</h2>
 <ul>
 <li><a href="http://stackoverflow.com/questions/7511321/uploading-base64-encoded-image-to-amazon-s3-via-node-js">http://stackoverflow.com/questions/7511321/uploading-base64-encoded-image-to-amazon-s3-via-node-js</a></li>
 <li><a href="https://aws.amazon.com/sdk-for-node-js/">https://aws.amazon.com/sdk-for-node-js/</a></li>

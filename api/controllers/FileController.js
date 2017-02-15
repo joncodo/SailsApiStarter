@@ -1,9 +1,6 @@
-/**
- * FileController
- * @module
- * @description :: Server-side actions for handling incoming requests.
- * @help        :: See http://sailsjs.com/docs/concepts/controllers
- */
+// # FileController
+// ## Server-side actions for managing files
+// See http://sailsjs.com/docs/concepts/controllers
 
 const AWS = require('aws-sdk');
 AWS.config.loadFromPath('./s3-config.json');
@@ -14,10 +11,9 @@ const s3 = new AWS.S3({
 });
 
 module.exports = {
-  /**
-   * POST /file/:folder/:fileName
-   * Creates a file in the folder
-   */
+  // ## .create()
+  // POST /v1/file/:folder/:fileName
+  // > Creates a file in the folder
   create: function(req, res) {
     req.file('image')._files.forEach(function(file) {
       const buffer = file.stream._readableState.buffer[0];
@@ -47,9 +43,9 @@ module.exports = {
     });
   },
 
-  /**
-   * /file/read/folder/fileName.txt
-   */
+  // ## .read()
+  // GET /v1/file/:folder/:fileName
+  // > Read the data of a file
   read: function read(req, res) {
     console.log(req.params);
     const data = {
@@ -69,13 +65,9 @@ module.exports = {
     });
   },
 
-  /**
-   * FileController.delete()
-   * /file/delete
-   * @description :: Removes a file from the s3 bucket (folder) that you choose
-   * @param {string} folder the s3 bucket(folder) form which you wish to delete
-   * @param {string} fileName the name of the file you wish to delete
-   */
+  // ## .delete()
+  // DELETE /v1/file/:folder/:fileName
+  // > Remove a file from a folder
   delete: function(req, res) {
     const data = {
       Bucket: req.params.folder,

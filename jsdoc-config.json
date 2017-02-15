@@ -4,14 +4,21 @@
         "dictionaries": ["jsdoc","closure"]
     },
     "source": {
-      "include": [ ],
+      "include": [ "api/controllers", "test", "config/routes.js", "README.md"],
       "exclude": [ ],
-      "includePattern": "api/**/*.js",
+      "includePattern": ".+\\.js(doc|x)?$",
       "excludePattern": "(^|\\/|\\\\)_"
     },
     "plugins": [],
     "templates": {
         "cleverLinks": false,
         "monospaceLinks": false
+    },
+    "opts": {
+        "template": "",
+        "encoding": "utf8",
+        "destination": "./docs/",
+        "recurse": true,
+        "tutorials": ""
     }
 }

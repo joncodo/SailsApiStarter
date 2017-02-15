@@ -6,13 +6,12 @@ a [Sails](http://sailsjs.com) application
 
 ```
 npm install
-node app.js
+npm start
 ```
 
 ## TODO
 
 - Get a public url of the image that users can see at a later date?
-- Generate Docs properly
 - Docker
 - Jenkins run tests and deploy
 - Host this on dev1
@@ -20,6 +19,16 @@ node app.js
 ## Questions
 
 - How long do we make the resources public?
+
+## Commands
+
+```
+npm start // start the app
+npm test // Run unit tests
+npm run docs // Generate and view the docs
+npm run production // prod mode
+npm debug //Listens for process on default debug port
+```
 
 ## Reference Code
 

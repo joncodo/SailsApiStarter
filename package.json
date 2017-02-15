@@ -13,9 +13,9 @@
     "aws-sdk": "2.10.0"
   },
   "scripts": {
-    "start": "NODE_ENV=production node app.js",
+    "start": "node app.js",
     "test": "./node_modules/mocha/bin/mocha test/mocha.before.js test/**/*.test.js --timeout 10000",
-    "docs": "./node_modules/.bin/jsdoc api/**/*.js README.md -d docs && open docs/index.html",
+    "docs": "./node_modules/.bin/docco api/controllers/*.js README.md config/routes.js && open docs/README.html",
     "production": "NODE_ENV=production forever start app.js",
     "debug": "node debug app.js"
   },
@@ -28,6 +28,7 @@
   "license": "",
   "devDependencies": {
     "chai": "3.5.0",
+    "docco": "^0.7.0",
     "jsdoc": "3.4.3",
     "mocha": "3.2.0",
     "supertest": "3.0.0"
